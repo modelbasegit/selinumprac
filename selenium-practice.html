@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium Testing Playground</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .test-section {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .test-section h2 {
+            margin-top: 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+        .hidden-content {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-radius: 0.25rem;
+        }
+        .loading-spinner {
+            display: none;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-8 text-center">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5e1825a9-3d39-4548-a9ef-8d276daa83c1.png" alt="Selenium Testing Playground banner with testing tools and automation concept" class="w-full rounded-lg mb-4">
+            <h1 class="text-3xl font-bold text-gray-800">Selenium Testing Playground</h1>
+            <p class="text-gray-600 mt-2">Practice your test automation skills with these interactive elements</p>
+        </header>
+
+        <!-- Checkbox Section -->
+        <div class="test-section" id="checkboxes">
+            <h2 class="text-xl font-semibold">Checkbox Testing</h2>
+            <p class="text-gray-600 mb-4">Test single and multiple checkbox interactions</p>
+            
+            <div class="form-group">
+                <label class="flex items-center">
+                    <input type="checkbox" id="single-checkbox" class="mr-2 h-4 w-4">
+                    <span>Single Checkbox</span>
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <p class="text-gray-700 mb-2">Checkbox Group:</p>
+                <label class="flex items-center">
+                    <input type="checkbox" name="checkbox-group" class="mr-2 h-4 w-4" value="option1">
+                    <span>Option 1</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" name="checkbox-group" class="mr-2 h-4 w-4" value="option2">
+                    <span>Option 2</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" name="checkbox-group" class="mr-2 h-4 w-4" value="option3">
+                    <span>Option 3</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Radio Buttons Section -->
+        <div class="test-section" id="radio-buttons">
+            <h2 class="text-xl font-semibold">Radio Button Testing</h2>
+            <p class="text-gray-600 mb-4">Test radio button selection behavior</p>
+            
+            <div class="form-group">
+                <p class="text-gray-700 mb-2">Radio Group:</p>
+                <label class="flex items-center">
+                    <input type="radio" name="radio-group" class="mr-2 h-4 w-4" value="option1">
+                    <span>Option A</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="radio-group" class="mr-2 h-4 w-4" value="option2">
+                    <span>Option B</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="radio-group" class="mr-2 h-4 w-4" value="option3">
+                    <span>Option C</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Input Fields Section -->
+        <div class="test-section" id="input-fields">
+            <h2 class="text-xl font-semibold">Input Field Testing</h2>
+            <p class="text-gray-600 mb-4">Test various types of input fields</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                    <label for="text-input" class="block text-gray-700 mb-1">Text Input</label>
+                    <input type="text" id="text-input" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password-input" class="block text-gray-700 mb-1">Password Input</label>
+                    <input type="password" id="password-input" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email-input" class="block text-gray-700 mb-1">Email Input</label>
+                    <input type="email" id="email-input" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div class="form-group">
+                    <label for="number-input" class="block text-gray-700 mb-1">Number Input</label>
+                    <input type="number" id="number-input" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Section -->
+        <div class="test-section" id="dropdowns">
+            <h2 class="text-xl font-semibold">Dropdown Testing</h2>
+            <p class="text-gray-600 mb-4">Test single and multi-select dropdowns</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                    <label for="single-dropdown" class="block text-gray-700 mb-1">Single Select</label>
+                    <select id="single-dropdown" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="">Select an option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="multi-dropdown" class="block text-gray-700 mb-1">Multi-Select</label>
+                    <select id="multi-dropdown" multiple class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="test-section" id="buttons">
+            <h2 class="text-xl font-semibold">Button Testing</h2>
+            <p class="text-gray-600 mb-4">Test various button interactions</p>
+            
+            <div class="flex flex-wrap gap-4">
+                <button id="primary-button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Primary Button</button>
+                <button id="secondary-button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">Secondary Button</button>
+                <button id="disabled-button" disabled class="px-4 py-2 bg-gray-400 text-white rounded-md cursor-not-allowed">Disabled Button</button>
+                <button id="alert-button" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Show Alert</button>
+            </div>
+            
+            <div id="button-result" class="hidden-content">
+                Button clicked!
+            </div>
+        </div>
+
+        <!-- Dynamic Elements Section -->
+        <div class="test-section" id="dynamic-elements">
+            <h2 class="text-xl font-semibold">Dynamic Elements</h2>
+            <p class="text-gray-600 mb-4">Test elements that appear/disappear</p>
+            
+            <button id="toggle-button" class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">Toggle Visibility</button>
+            <div id="toggle-content" class="hidden-content">
+                This content is now visible!
+            </div>
+            
+            <button id="load-button" class="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Load Content</button>
+            <div class="loading-spinner" id="loading-spinner">
+                <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
+            </div>
+            <div id="loaded-content" class="hidden-content"></div>
+        </div>
+
+        <!-- Form Submission Section -->
+        <div class="test-section" id="form-submission">
+            <h2 class="text-xl font-semibold">Form Submission</h2>
+            <p class="text-gray-600 mb-4">Test form submission handling</p>
+            
+            <form id="test-form" class="space-y-4">
+                <div class="form-group">
+                    <label for="username" class="block text-gray-700 mb-1">Username</label>
+                    <input type="text" id="username" name="username" required class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="block text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" name="password" required class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div class="form-group">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="remember" class="mr-2 h-4 w-4">
+                        <span>Remember me</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Submit</button>
+            </form>
+            
+            <div id="form-result" class="hidden-content mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Button interactions
+        document.getElementById('primary-button').addEventListener('click', function() {
+            document.getElementById('button-result').style.display = 'block';
+        });
+        
+        document.getElementById('toggle-button').addEventListener('click', function() {
+            const content = document.getElementById('toggle-content');
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        });
+        
+        document.getElementById('load-button').addEventListener('click', function() {
+            const spinner = document.getElementById('loading-spinner');
+            const content = document.getElementById('loaded-content');
+            
+            spinner.style.display = 'block';
+            content.style.display = 'none';
+            
+            // Simulate AJAX load
+            setTimeout(function() {
+                spinner.style.display = 'none';
+                content.style.display = 'block';
+                content.innerHTML = '<p>This content was loaded dynamically at ' + new Date().toLocaleTimeString() + '</p>';
+            }, 1500);
+        });
+        
+        document.getElementById('alert-button').addEventListener('click', function() {
+            alert('This is a JavaScript alert!');
+        });
+        
+        // Form submission
+        document.getElementById('test-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const result = {};
+            
+            for (let [key, value] of formData.entries()) {
+                result[key] = value;
+            }
+            
+            const resultElement = document.getElementById('form-result');
+            resultElement.style.display = 'block';
+            resultElement.innerHTML = `
+                <h3 class="font-semibold">Form Submitted</h3>
+                <pre class="bg-gray-100 p-2 rounded mt-2">${JSON.stringify(result, null, 2)}</pre>
+            `;
+        });
+    </script>
+</body>
+</html>
+
